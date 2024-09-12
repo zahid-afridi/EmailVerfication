@@ -7,6 +7,7 @@ const PORT=process.env.PORT || 4000
 const app=express()
 
 DbCon()
+app.use(express.json())
 app.use('/auth',AuthRoutes)
 app.listen(PORT,()=>{
     console.log(`App is running on Port ${PORT}`)

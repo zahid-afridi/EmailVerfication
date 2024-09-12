@@ -19,6 +19,16 @@ const userShcema= new mongoose.Schema({
     lastLogin:{
         type:Date,
         default:Date.now
-    }
+    },
+    isVerified:{
+        type:Boolean,
+        default:false
+    },
+    resetPasswordToken:String,
+    resetPasswordExpiresAt:Date,
+    verficationToken:String,
+    verficationTokenExpiresAt:Date,
     
-})
+},{timestamps:true})
+
+export const Usermodel=mongoose.model('User',userShcema)
